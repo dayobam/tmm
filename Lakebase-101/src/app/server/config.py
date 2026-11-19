@@ -106,7 +106,7 @@ def get_sync_pipeline_id() -> str:
     w = get_workspace_client()
     target = f"{GOLD_TABLE.replace('.', '.').rsplit('.', 1)[0]}.customer_360_synced"
     for p in w.pipelines.list_pipelines(filter=f"name LIKE '%customer_360_synced%'"):
-        if "lakebase_101_catalog" in (p.name or ""):
+        if "daiwt_dc_catalog" in (p.name or ""):
             return p.pipeline_id
     return ""
 
